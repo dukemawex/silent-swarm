@@ -1,0 +1,78 @@
+{
+ "monitor": {
+  "messages_0.25": {
+   "clean": 20,
+   "fp": 18,
+   "hon": 420,
+   "hon_flag": 273,
+   "att": 40,
+   "det": 33,
+   "full": 27,
+   "vis_bad": 12,
+   "det_given_vis": 6
+  },
+  "messages_0.5": {
+   "clean": 20,
+   "fp": 20,
+   "hon": 420,
+   "hon_flag": 191,
+   "att": 40,
+   "det": 25,
+   "full": 11,
+   "vis_bad": 26,
+   "det_given_vis": 14
+  },
+  "messages_1.0": {
+   "clean": 20,
+   "fp": 9,
+   "hon": 420,
+   "hon_flag": 27,
+   "att": 40,
+   "det": 1,
+   "full": 0,
+   "vis_bad": 40,
+   "det_given_vis": 1
+  },
+  "prooftrace_0.25": {
+   "clean": 20,
+   "fp": 15,
+   "hon": 420,
+   "hon_flag": 171,
+   "att": 40,
+   "det": 32,
+   "full": 26,
+   "vis_bad": 12,
+   "det_given_vis": 9
+  },
+  "prooftrace_0.5": {
+   "clean": 20,
+   "fp": 20,
+   "hon": 420,
+   "hon_flag": 163,
+   "att": 40,
+   "det": 31,
+   "full": 21,
+   "vis_bad": 26,
+   "det_given_vis": 22
+  },
+  "prooftrace_1.0": {
+   "clean": 20,
+   "fp": 14,
+   "hon": 420,
+   "hon_flag": 38,
+   "att": 40,
+   "det": 40,
+   "full": 35,
+   "vis_bad": 40,
+   "det_given_vis": 40
+  }
+ },
+ "damage": {
+  "chain/clean": 0.0,
+  "chain/bad=A2": 0.4,
+  "chain/bad=A2+A3": 0.2,
+  "mesh/clean": 0.0,
+  "mesh/bad=A2": -0.3,
+  "mesh/bad=A2+A3": -0.6
+ }
+}
