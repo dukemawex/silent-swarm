@@ -70,4 +70,17 @@ D += [H("Reproducibility &amp; LLM usage"), P("pip install requests matplotlib r
 D += [H("References"), P("[1] Apart Research, AI Control Hackathon 2026 — 1st place 'Omission Attacks'. apartresearch.com/sprints/ai-control-hackathon-2026-03-20-to-2026-03-22<br/>"
 "[2] AI Alignment Foundation &amp; Apart Research, Swarm Alignment Hackathon 2026. aialignmentfoundation.org/hackathons/swarm-alignment-2026<br/>"
 "[3] Greenblatt et al., AI Control: Improving Safety Despite Intentional Subversion, 2023.<br/>[4] E. Duke, ProofTrace agent, github.com/dukemawex/Prooftrace-agent")]
+D += [H("Appendix A. Limitations and Dual-Use / Ethical Considerations"), P(
+"<b>Limitations (consolidated).</b> Small sample (10 seeds per cell; 40 attack and 20 clean runs per monitor setting), so confidence intervals are wide. One task family, one agent model and one monitor model, all free-tier; "
+"results may not transfer to frontier models or other tasks. Synthetic records only. A single, instructed attacker strategy; no adaptive attackers that forge plausible diffs. Diffs are computed by the harness, so the "
+"ProofTrace advantage assumes a trusted logger. Monitor outputs are uncalibrated suspect lists, not scores, so no ROC analysis. Temperature 0 limits behavioural diversity. Topology effects are confounded with the mesh "
+"alert instruction. Free-tier rate limits shaped run counts. Tamper detection holds by construction."),
+P("<b>Dual-use.</b> Describing how omission attacks evade message-based oversight could help a saboteur design quieter attacks. We judge the risk low: the attack (skip a step, claim success) is trivial and already public [1], "
+"and our main contribution is defensive evidence that message-only monitoring fails and content-level, tamper-evident logs work. We release no new jailbreaks or evasion techniques beyond a one-line red-team instruction."),
+P("<b>Mitigations.</b> Log harness-computed state diffs, not agent self-reports; hash-chain logs so they cannot be edited unnoticed; add deterministic checks for privacy-critical steps (e.g. redaction) at pipeline exit; "
+"report monitor precision and false alarms, not just recall; sample monitor visibility toward high-risk steps."),
+P("<b>Data and privacy.</b> All records are randomly generated from fixed seeds; names, SSNs and emails are synthetic and contain no real personal data. No human subjects were involved."),
+P("<b>Models and compute.</b> Only free OpenRouter models were used, within provider terms; agents ran only in a closed, offline-effect sandbox with no tools or external actions."),
+P("<b>Responsible disclosure.</b> No vulnerability in any specific product was found or exploited; if future work finds one in a real agent framework, we will report it privately to the maintainers before publishing."),
+P("<b>AI assistance.</b> An AI assistant helped write code and draft text. All numbers were computed by src/analyze.py from logged model outputs, and the author reviewed the results.")]
 SimpleDocTemplate("report.pdf", pagesize=A4, leftMargin=2*cm, rightMargin=2*cm, topMargin=1.6*cm, bottomMargin=1.6*cm, title="Silent Swarm", author="Emmanuel Duke").build(D)
